@@ -1,0 +1,1512 @@
+/* =====================================================
+   YUKIXP WEBSITE
+   BLACK / WHITE / RED COMIC STREET STYLE
+===================================================== */
+
+
+/* ================= VARIABLES ================= */
+
+:root {
+
+    --black: #080808;
+    --red: #c71920;
+    --dark-red: #8d1015;
+
+    --paper: #eeeae0;
+    --white: #fffdf7;
+
+    --grey: #bcb8ad;
+
+    --max-width: 1300px;
+
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background:
+        radial-gradient(
+            #111 0.7px,
+            transparent 0.7px
+        ) 0 0 / 6px 6px,
+        var(--paper);
+
+    color: var(--black);
+
+    font-family:
+        "Barlow Condensed",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* Paper noise */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.05;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
+    z-index: 9999;
+
+}
+
+
+/* ================= LINKS ================= */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: var(--paper);
+
+    border-bottom: 4px solid var(--black);
+
+    box-shadow:
+        0 5px 0 var(--red);
+
+}
+
+
+.navbar {
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 14px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+/* Logo */
+
+.logo {
+
+    font-family: "Archivo Black";
+
+    font-size: 32px;
+
+    letter-spacing: -3px;
+
+    transform: rotate(-2deg);
+
+}
+
+.logo span {
+
+    color: var(--red);
+
+}
+
+
+/* Navigation */
+
+.nav-links {
+
+    display: flex;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+
+}
+
+.nav-links a {
+
+    padding: 8px 10px;
+
+    font-weight: 900;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    transition: .15s;
+
+}
+
+.nav-links a:hover {
+
+    background: var(--red);
+
+    color: white;
+
+    transform: rotate(-2deg);
+
+}
+
+
+/* Mobile menu */
+
+.menu-button {
+
+    display: none;
+
+    background: var(--black);
+
+    color: white;
+
+    border: 0;
+
+    padding: 10px;
+
+    font-weight: 900;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    min-height: 680px;
+
+    padding: 60px 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+}
+
+
+/* Small text */
+
+.eyebrow {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Stamp */
+
+.stamp {
+
+    display: inline-block;
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 10px 13px;
+
+    font-family: "DM Mono";
+
+    font-size: 11px;
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Main title */
+
+.hero h1 {
+
+    font-family: "Anton";
+
+    font-size: clamp(
+        90px,
+        14vw,
+        190px
+    );
+
+    line-height: .72;
+
+    letter-spacing: -6px;
+
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: var(--red);
+
+    text-shadow:
+        5px 5px 0 var(--black);
+
+}
+
+
+.hero-description {
+
+    max-width: 600px;
+
+    margin-top: 35px;
+
+    margin-bottom: 30px;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+}
+
+
+/* ================= BUTTONS ================= */
+
+.button-row {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--red);
+
+    color: white;
+
+    border: 3px solid var(--black);
+
+    padding: 13px 18px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    box-shadow: 5px 5px 0 var(--black);
+
+    transition: .15s;
+
+}
+
+.button:hover {
+
+    transform:
+        translate(3px, 3px);
+
+    box-shadow:
+        2px 2px 0 var(--black);
+
+}
+
+.button-white {
+
+    background: var(--white);
+
+    color: var(--black);
+
+}
+
+
+/* ================= COMIC ART ================= */
+
+.hero-art {
+
+    min-height: 540px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.comic-frame {
+
+    width: 75%;
+
+    aspect-ratio: 3 / 4;
+
+    border: 5px solid var(--black);
+
+    background: white;
+
+    box-shadow:
+        18px 18px 0 var(--black);
+
+    transform: rotate(2deg);
+
+    clip-path:
+        polygon(
+            8% 4%,
+            91% 0,
+            100% 93%,
+            78% 100%,
+            5% 94%,
+            0 15%
+        );
+
+    overflow: hidden;
+
+}
+
+
+/* Replace this with your image */
+
+.image-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: "Anton";
+
+    font-size: 50px;
+
+    line-height: .8;
+
+    background:
+        radial-gradient(
+            #000 1px,
+            transparent 1px
+        ) 0 0 / 5px 5px;
+
+    filter:
+        grayscale(1)
+        contrast(1.5);
+
+}
+
+
+/* Comic burst */
+
+.comic-burst {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 40px;
+
+    width: 280px;
+
+    padding: 35px;
+
+    background: var(--red);
+
+    font-family: "Archivo Black";
+
+    font-size: 27px;
+
+    line-height: .9;
+
+    text-align: center;
+
+    clip-path:
+        polygon(
+            50% 0,
+            58% 22%,
+            80% 8%,
+            75% 32%,
+            100% 36%,
+            78% 51%,
+            94% 70%,
+            67% 65%,
+            64% 100%,
+            47% 76%,
+            27% 94%,
+            31% 67%,
+            0 72%,
+            21% 50%,
+            3% 32%,
+            32% 34%,
+            24% 9%,
+            44% 22%
+        );
+
+    transform: rotate(-5deg);
+
+}
+
+
+.comic-label {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 60px;
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 13px;
+
+    font-family: "DM Mono";
+
+    font-size: 11px;
+
+    transform: rotate(7deg);
+
+}
+
+
+/* ================= TICKER ================= */
+
+.ticker {
+
+    overflow: hidden;
+
+    background: var(--black);
+
+    color: white;
+
+    border-block: 5px solid var(--red);
+
+}
+
+
+.ticker-track {
+
+    white-space: nowrap;
+
+    padding: 12px;
+
+    font-family: "DM Mono";
+
+    animation:
+        ticker 20s linear infinite;
+
+}
+
+
+@keyframes ticker {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 80px 20px;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    border-bottom: 5px solid var(--black);
+
+    padding-bottom: 12px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family: "Anton";
+
+    font-size: 60px;
+
+    line-height: .8;
+
+}
+
+
+.section-heading > p {
+
+    max-width: 430px;
+
+    font-family: "DM Mono";
+
+    font-size: 11px;
+
+}
+
+
+/* ================= CARDS ================= */
+
+.card-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.card {
+
+    padding: 25px;
+
+    background: var(--white);
+
+    border: 3px solid var(--black);
+
+    box-shadow:
+        7px 7px 0 var(--black);
+
+}
+
+
+.card:nth-child(2) {
+
+    transform: rotate(.8deg);
+
+}
+
+
+.card:nth-child(3) {
+
+    transform: rotate(-.7deg);
+
+}
+
+
+.red-card {
+
+    background: var(--red);
+
+    color: white;
+
+}
+
+
+.card-tag {
+
+    display: inline-block;
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 6px 9px;
+
+    font-family: "DM Mono";
+
+    font-size: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.card h3 {
+
+    font-family: "Archivo Black";
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.card p {
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ================= STATS ================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.stat {
+
+    background: var(--white);
+
+    border: 3px solid var(--black);
+
+    padding: 20px;
+
+    box-shadow:
+        5px 5px 0 var(--red);
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-family: "Anton";
+
+    font-size: 55px;
+
+    line-height: .8;
+
+}
+
+
+.stat span {
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ================= CASE FILE ================= */
+
+.case-file {
+
+    max-width: var(--max-width);
+
+    margin: 60px auto;
+
+    padding: 40px;
+
+    background: var(--red);
+
+    color: white;
+
+    border: 5px solid var(--black);
+
+    box-shadow:
+        10px 10px 0 var(--black);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+}
+
+
+.case-file h2 {
+
+    font-family: "Anton";
+
+    font-size: 70px;
+
+    line-height: .75;
+
+}
+
+
+.case-file p {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+.case-file ul {
+
+    margin-left: 20px;
+
+    margin-bottom: 25px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+
+    background: var(--black);
+
+    color: white;
+
+    border-top: 8px solid var(--red);
+
+    padding: 50px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.footer h2 {
+
+    font-family: "Anton";
+
+    font-size: 60px;
+
+    line-height: .8;
+
+}
+
+
+.footer p {
+
+    font-family: "DM Mono";
+
+    font-size: 11px;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        right: 0;
+
+        background: var(--paper);
+
+        padding: 15px;
+
+        border-bottom: 4px solid var(--black);
+
+        flex-direction: column;
+
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .stats {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 85px;
+    }
+
+    .hero-art {
+        min-height: 400px;
+    }
+
+    .comic-frame {
+        width: 80%;
+    }
+
+    .comic-burst {
+        width: 220px;
+        font-size: 21px;
+    }
+
+    .card-grid,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 15px;
+    }
+
+    .case-file {
+        margin: 30px 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .case-file h2 {
+        font-size: 55px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    height: 80px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: #050505;
+    border-bottom: 1px solid #242424;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: #ff0033;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #ff0033;
+}
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ff0033;
+
+    left: 0;
+    bottom: -8px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.merch-hero {
+    min-height: 480px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.98),
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.98)
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            #0b0b0b 0px,
+            #0b0b0b 2px,
+            #080808 2px,
+            #080808 8px
+        );
+
+    border-bottom: 1px solid #222;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.small-title {
+    color: #ff0033;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: clamp(60px, 9vw, 130px);
+
+    line-height: 0.8;
+
+    font-weight: 1000;
+
+    letter-spacing: -7px;
+}
+
+.hero-text h1 span {
+    display: block;
+
+    color: #ff0033;
+
+    margin-left: 35px;
+}
+
+.hero-description {
+    max-width: 450px;
+
+    margin-top: 35px;
+
+    color: #a5a5a5;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.shop-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 30px;
+
+    padding: 17px 28px;
+
+    background: #ff0033;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.25s ease;
+
+    border: 1px solid #ff0033;
+}
+
+.shop-button span {
+    font-size: 18px;
+}
+
+.shop-button:hover {
+    background: transparent;
+
+    color: #ff0033;
+
+    transform: translateY(-3px);
+}
+
+.shop-button.large {
+    padding: 20px 35px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.merch-container {
+    width: min(1400px, 88%);
+
+    margin: auto;
+
+    padding: 100px 0;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 50px;
+
+    margin-bottom: 60px;
+}
+
+.section-label {
+    color: #ff0033;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: clamp(45px, 6vw, 85px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+}
+
+.section-heading h2 span {
+    color: #ff0033;
+}
+
+.collection-info {
+    max-width: 350px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MERCH GRID
+========================= */
+
+.merch-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.merch-item {
+    min-width: 0;
+}
+
+.product-image {
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border: 1px solid #242424;
+
+    cursor: default;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   IMAGE NUMBER
+========================= */
+
+.image-number {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: #080808;
+
+    color: #ffffff;
+
+    padding: 7px 10px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    border-left: 3px solid #ff0033;
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info {
+    padding: 18px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+.product-info h3 {
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 900;
+}
+
+.product-info p {
+    color: #777;
+
+    font-size: 12px;
+
+    margin-top: 7px;
+}
+
+
+/* =========================
+   BOTTOM SHOP
+========================= */
+
+.shop-bottom {
+    margin-top: 120px;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255,0,51,0.07),
+            rgba(255,0,51,0.02)
+        );
+
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #252525;
+}
+
+.shop-bottom p {
+    color: #777;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 8%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: #ff0033;
+}
+
+footer p {
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 10px;
+    }
+
+    .merch-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .navbar nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .merch-hero {
+        min-height: 430px;
+
+        padding: 70px 25px;
+    }
+
+    .hero-text h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero-text h1 span {
+        margin-left: 15px;
+    }
+
+    .merch-container {
+        width: 90%;
+
+        padding: 70px 0;
+    }
+
+    .merch-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .section-heading h2 {
+        letter-spacing: -2px;
+    }
+
+    .shop-bottom {
+        margin-top: 80px;
+
+        padding: 60px 20px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+}
